@@ -4,9 +4,10 @@
   tasks:
 
     - name: Start docker service
-      service:
+      systemd:
         name: docker
         state: started
+        enabled: yes
         
     - name: pull docker image
       shell: docker pull docker.io/spoider/pyth:v1.0
