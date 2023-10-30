@@ -4,6 +4,7 @@ pipeline{
   environment {
     CI = 'true'
     registry = 'spoider/pyth'
+    DOCKERHUB_CRED = credentials('CRED_DOCKER')
     registryCredential = 'docker_cred'
     dockerimage = ''
 }
@@ -35,7 +36,7 @@ stage('Build Docker Image') {
 stage('Push Image to dockerHub') {
     steps {
       script{
-          sh '/usr/local/bin/docker login -u "gamergrange9@gmail.com" -p "dckr_pat_EvMAwSVkyrjcZdIJm56cmkmy4kA"'
+          sh '/usr/local/bin/docker login'
           sh '/usr/local/bin/docker push ' +registry +':v1.0'
 } }
 }
