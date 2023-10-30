@@ -35,8 +35,6 @@ stage('Build Docker Image') {
 stage('Push Image to dockerHub') {
     steps {
       script{
-          def credentials = credentials('docker_cred')
-          def password = credentials.password
           sh '/usr/local/bin/docker login -u "gamergrange9@gmail.com" -p "dckr_pat_EvMAwSVkyrjcZdIJm56cmkmy4kA"'
           sh '/usr/local/bin/docker push ' +registry +':v1.0'
 } }
