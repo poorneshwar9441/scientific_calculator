@@ -45,6 +45,9 @@ stage('Free local space') {
         sh '/usr/local/bin/docker rmi $registry:v1.0'
     }
 }
+stage('Deploy'){
+    sh 'ansible-playbook playbook.yml -i inventory -e image_name=spoider/pyth'
+}
 
  }
 
