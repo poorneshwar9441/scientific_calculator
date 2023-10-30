@@ -4,3 +4,12 @@ stage('Git Pull') {
       branch: 'main',
       credentialsId: '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'
 } }
+stage('Build') {
+  steps {
+      sh 'python3 calculator.py'
+} }
+stage('Test') {
+    steps {
+        sh 'python3 test_calculator.py'
+    }
+}
