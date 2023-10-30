@@ -1,3 +1,7 @@
+pipeline{
+  agent any
+  stages{
+
 stage('Git Pull') {
   steps {
       git url: 'https://github.com/poorneshwar9441/scientific_calculator.git',
@@ -12,4 +16,6 @@ stage('Test') {
     steps {
         sh 'python3 test_calculator.py'
     }
+}
+ }
 }
