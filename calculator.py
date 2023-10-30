@@ -41,7 +41,7 @@ def main():
         print("8. Tangent")
         print("9. Exit")
 
-        choice = input("Enter your choice (1/2/3/4/5/6/7/8/9): ")
+        choice = input(" ")
 
         if choice == '9':
             print("Exiting the calculator. Goodbye!")
