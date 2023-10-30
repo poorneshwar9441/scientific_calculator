@@ -41,6 +41,12 @@ stage('Push Image to dockerHub') {
 } }
 }
 
+stage('Free local space') {
+    steps {
+        sh '/usr/local/bin/docker rmi $registry:v1.0'
+    }
+}
+
  }
 
 }
