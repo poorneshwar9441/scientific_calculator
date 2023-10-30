@@ -31,7 +31,7 @@ stage('Test') {
 stage('Build Docker Image') {
   steps {
     script{
-       dockerimage = sh '/usr/local/bin/docker build -t '+registry+':v1.0'
+       dockerimage = sh '/usr/local/bin/docker build -t '+registry+':v1.0 .'
 } }
 
 
@@ -39,7 +39,7 @@ stage('Build Docker Image') {
 stage('Push Image to dockerHub') {
     steps {
       script{
-          sh '/usr/local/bin/docker push ' +registry +':v1.0'
+          sh '/usr/local/bin/docker push ' +registry +':v1.0 .'
 } }
 }
 
