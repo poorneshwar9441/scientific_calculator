@@ -1,5 +1,16 @@
 pipeline{
   agent any
+
+  environment {
+    CI = 'true'
+    registry = 'spoider/pyth'
+    DOCKERHUB_CRED = ''
+    registryCredential = ''
+    dockerimage = ''
+}
+
+
+
   stages{
 
 stage('Git Pull') {
@@ -17,5 +28,21 @@ stage('Test') {
         sh 'python3 test_calculator.py'
     }
 }
+stage('Build Docker Image') {
+  steps {
+    script{
+       dockerimage = sh '/usr/local/bin/docker build -t'+registry+':v1.0'
+} }
+
+
+}
+stage('Push Image to dockerHub') {
+    steps {
+      script{
+          sh '/usr/local/bin/docker push ' +registry +':v1.0'
+} }
+}
+
  }
+
 }
