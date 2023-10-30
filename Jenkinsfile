@@ -28,6 +28,7 @@ stage('Test') {
 stage('Build Docker Image') {
   steps {
     script{
+       sh '/usr/local/bin/docker login'
        dockerimage = sh '/usr/local/bin/docker build -t '+registry+':v1.0 .'
 } }
 
