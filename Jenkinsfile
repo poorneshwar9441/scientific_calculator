@@ -4,8 +4,8 @@ pipeline{
   environment {
     CI = 'true'
     registry = 'spoider/pyth'
-    DOCKERHUB_CRED = credentials('docker_creds')
-    registryCredential = 'docker_creds'
+    DOCKERHUB_CRED = credentials('dockee')
+    registryCredential = 'dockee'
     dockerimage = ''
 }
 stages{
