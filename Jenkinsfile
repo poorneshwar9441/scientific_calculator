@@ -4,7 +4,7 @@ pipeline{
   environment {
     CI = 'true'
     registry = 'spoider/pyth'
-    DOCKERHUB_CRED = credentials('CRED_DOCKER')
+    DOCKERHUB_CRED = credentials('docker_cred')
     registryCredential = 'docker_cred'
     dockerimage = ''
 }
