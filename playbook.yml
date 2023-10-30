@@ -1,10 +1,6 @@
 ---
 - name: Pull docker image of Calculator
-  all:
-  hosts:
-    localhost:
-      ansible_connection: local
-      
+  hosts: localhost
   tasks:
 
     - name: Start docker service
