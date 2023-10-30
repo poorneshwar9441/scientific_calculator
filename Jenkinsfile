@@ -36,7 +36,7 @@ stage('Build Docker Image') {
 stage('Push Image to dockerHub') {
     steps {
       script{
-          sh '/usr/local/bin/docker login -u "gamergrange@gmail.com" -p '+DOCKERHUB_CRED+''
+          sh '/usr/local/bin/docker login -u "gamergrange9@gmail.com" -p '+DOCKERHUB_CRED+''
           sh '/usr/local/bin/docker push ' +registry +':v1.0'
 } }
 }
