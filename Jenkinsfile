@@ -10,7 +10,7 @@ stage('Git Pull') {
 } }
 stage('Build') {
   steps {
-      sh 'python3 calculator.py'
+      sh 'echo Build step'
 } }
 stage('Test') {
     steps {
