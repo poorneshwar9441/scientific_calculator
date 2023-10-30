@@ -12,5 +12,5 @@
       shell: docker pull docker.io/spoider/pyth:v1.0
       
     - name: running container
-      shell: docker run -it gaparul/scientific-calculator-react:latest
+      shell: docker run -it spoider/pyth:v1:0
       
