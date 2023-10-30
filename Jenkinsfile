@@ -47,7 +47,7 @@ stage('Free local space') {
 }
 stage('Deploy'){
     steps{
-    sh '/Users/poorneshwarreddychaganti/Library/Python/3.9/bin/ansible-playbook/ansible-playbook playbook.yml -i inventory -e image_name=spoider/pyth'
+    sh '/Users/poorneshwarreddychaganti/Library/Python/3.9/bin/ansible-playbook playbook.yml -i inventory -e image_name=spoider/pyth'
      }
 }
 
