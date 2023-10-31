@@ -10,5 +10,10 @@
         name: spoider/pyth:v1.0
         source: pull
 
+    - name: start docker
+      service:
+        name: docker
+        state: started
+
     - name: Run Docker Container
       shell: docker run -it spoider/pyth
