@@ -11,7 +11,4 @@
         source: pull
 
     - name: Run Docker Container
-      community.docker.docker_container:
-        name: my_container
-        image: spoider/pyth:v1.0
-        state: started
+      shell: docker run -it spoider/pyth
