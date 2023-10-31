@@ -5,9 +5,7 @@
     ansible_python_interpreter: /usr/local/bin/python3
   tasks:
     - name: Pull Docker image
-      community.docker.docker_image:
-        name: spoider/pyth:v1.0
-        source: pull
+        command: docker pull spoider/pyth:v1.0
 
     - name: Run Docker container
       community.docker.docker_container:
