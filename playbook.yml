@@ -1,6 +1,6 @@
 ---
 - name: Manage Docker Container
-  hosts: all
+  hosts: localhost
   vars:
     ansible_python_interpreter: /usr/local/bin/python3
   tasks:
@@ -8,7 +8,14 @@
       community.docker.docker_image:
         name: spoider/pyth:v1.0
         source: pull
-        
+
+    - name: start docker
+      service: docker
+      state: started
+
+    - name: run docker
+      shell: docker run -it spoider/pyth
+
     # - name: start docker service
     #   service: docker
     #   state: started
