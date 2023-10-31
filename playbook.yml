@@ -1,24 +1,16 @@
 ---
-- name: Manage Docker Container
+- name: Run Docker Container on macOS
   hosts: localhost
-  vars:
-    ansible_python_interpreter: /usr/local/bin/python3
+  gather_facts: no  # Disable gathering facts since we're only running locally
+
   tasks:
-    - name: Pull Docker image
+    - name: Pull Docker Image
       community.docker.docker_image:
         name: spoider/pyth:v1.0
         source: pull
 
-    # - name: start docker
-    #   service: docker
-    #   state: started
-
-    # - name: run docker
-    #   shell: docker run -it spoider/pyth
-
-    # - name: start docker service
-    #   service: docker
-    #   state: started
-
-    # - name: Run Docker container
-    #   shell: docker run -it spoider/pyth
+    - name: Run Docker Container
+      community.docker.docker_container:
+        name: my_container
+        image: spoider/pyth:v1.0
+        state: started
