@@ -10,11 +10,6 @@
         name: spoider/pyth:v1.0
         source: pull
 
-    - name: start docker service
-      service:
-        name: docker
-        state: started
-
     - name: Run Docker Container
       community.docker.docker_container:
         name: my_container
