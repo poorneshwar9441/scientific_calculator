@@ -10,10 +10,5 @@
         name: spoider/pyth:v1.0
         source: pull
 
-    - name: Start Docker Service on macOS
-      community.general.mac_service:
-        name: com.docker.docker
-        state: started
-
     - name: Run Docker Container
-      shell: docker run -it spoider/pyth:v1.0
+      shell: /usr/local/bin/docker run -it spoider/pyth:v1.0
