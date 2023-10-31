@@ -11,4 +11,4 @@
         source: pull
 
     - name: Run Docker Container
-      shell: /usr/local/bin/docker run -it spoider/pyth:v1.0
+      shell: /usr/local/bin/docker run spoider/pyth:v1.0
