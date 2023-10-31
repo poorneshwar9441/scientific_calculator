@@ -3,21 +3,20 @@
   hosts: localhost
   gather_facts: no
   vars:
-      ansible_python_interpreter: /usr/local/bin/python3
+    ansible_python_interpreter: /usr/local/bin/python3
 
   tasks:
-    - name: Ensure Docker configuration directory exists
+    - name: Create Docker configuration directory
       file:
-        path: "{{ ansible_env.HOME }}/.docker"
+        path: "{{ ansible_user_dir }}/.docker"
         state: directory
-      become: yes
+        mode: "0700"
 
     - name: Copy Docker configuration file with credentials
       copy:
         src: path/to/your/config.json
-        dest: "{{ ansible_env.HOME }}/.docker/config.json"
+        dest: "{{ ansible_user_dir }}/.docker/config.json"
         mode: "0600"
-      become: yes
 
     - name: Pull Docker Image
       community.docker.docker_image:
