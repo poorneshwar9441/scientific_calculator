@@ -2,6 +2,8 @@
 - name: Run Docker Container on macOS
   hosts: localhost
   gather_facts: no  # Disable gathering facts since we're only running locally
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
 
   tasks:
     - name: Pull Docker Image
