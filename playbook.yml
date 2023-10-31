@@ -1,15 +1,22 @@
 ---
 - name: Run Docker Container on macOS
   hosts: localhost
-  gather_facts: no  # Disable gathering facts since we're only running locally
+  gather_facts: no
   vars:
-    ansible_python_interpreter: /usr/local/bin/python3
+      ansible_python_interpreter: /usr/local/bin/python3
 
   tasks:
+    - name: Set Docker Hub credentials
+      set_fact:
+        registry_username: spoider
+        registry_password: docker_user
+
     - name: Pull Docker Image
       community.docker.docker_image:
         name: spoider/pyth:v1.0
         source: pull
+        registry_username: "{{ registry_username }}"
+        registry_password: "{{ registry_password }}"
 
     - name: Run Docker Container
       community.docker.docker_container:
