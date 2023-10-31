@@ -15,3 +15,5 @@
         name: deployed_container
         image: spoider/pyth:v1.0
         state: started
+        interactive: yes
+        tty: yes
