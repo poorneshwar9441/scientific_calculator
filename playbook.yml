@@ -12,6 +12,6 @@
 
     - name: Run Docker Container
       community.docker.docker_container:
-        name: my_container
+        name: deployed_container
         image: spoider/pyth:v1.0
         state: started
