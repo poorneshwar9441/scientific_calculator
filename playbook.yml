@@ -11,7 +11,7 @@
         source: pull
 
     - name: start docker
-      service:
+      community.general.mac_service:
         name: docker
         state: started
 
