@@ -6,17 +6,23 @@
       ansible_python_interpreter: /usr/local/bin/python3
 
   tasks:
-    - name: Set Docker Hub credentials
-      set_fact:
-        registry_username: spoider
-        registry_password: docker_user
+    - name: Ensure Docker configuration directory exists
+      file:
+        path: "{{ ansible_env.HOME }}/.docker"
+        state: directory
+      become: yes
+
+    - name: Copy Docker configuration file with credentials
+      copy:
+        src: path/to/your/config.json
+        dest: "{{ ansible_env.HOME }}/.docker/config.json"
+        mode: "0600"
+      become: yes
 
     - name: Pull Docker Image
       community.docker.docker_image:
         name: spoider/pyth:v1.0
         source: pull
-        registry_username: "{{ registry_username }}"
-        registry_password: "{{ registry_password }}"
 
     - name: Run Docker Container
       community.docker.docker_container:
