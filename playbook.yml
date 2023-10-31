@@ -1,14 +1,17 @@
 ---
-- name: Pull and run a Docker container
-  hosts: localhost
+- name: Pull docker image of Calculator
+  hosts: all
   vars:
     ansible_python_interpreter: /usr/local/bin/python3
   tasks:
-    - name: Pull Docker image
-        command: docker pull spoider/pyth:v1.0
 
-    - name: Run Docker container
-      community.docker.docker_container:
-        name: my_calculator_container
-        image: spoider/pyth:v1.0
+    - name: Start docker service
+      service:
+        name: docker
         state: started
+        
+    - name: pull docker image
+      shell: docker pull docker.io/spoider/pyth:v1.0
+      
+    - name: running container
+      shell: docker run -it spoider/pyth:v1.0
