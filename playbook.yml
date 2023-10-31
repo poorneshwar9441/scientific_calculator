@@ -1,23 +1,10 @@
 ---
 - name: Run Docker Container on macOS
   hosts: localhost
-  gather_facts: no
+  gather_facts: no  # Disable gathering facts since we're only running locally
   vars:
     ansible_python_interpreter: /usr/local/bin/python3
-
   tasks:
-    - name: Create Docker configuration directory
-      file:
-        path: "{{ ansible_user_dir }}/.docker"
-        state: directory
-        mode: "0700"
-
-    - name: Copy Docker configuration file with credentials
-      copy:
-        src: path/to/your/config.json
-        dest: "{{ ansible_user_dir }}/.docker/config.json"
-        mode: "0600"
-
     - name: Pull Docker Image
       community.docker.docker_image:
         name: spoider/pyth:v1.0
