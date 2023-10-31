@@ -53,8 +53,8 @@ stage('Deploy'){
        credentialsId: 'localhost',
        disableHostKeyChecking: true,
        installation: 'Ansible',
-       inventory: inventory.yml,
-       playbook: playbook.yml,
+       inventory: 'inventory.yml',
+       playbook: 'playbook.yml',
        sudoUser: null
      }
 }
