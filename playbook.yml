@@ -9,12 +9,12 @@
         name: spoider/pyth:v1.0
         source: pull
 
-    - name: start docker
-      service: docker
-      state: started
+    # - name: start docker
+    #   service: docker
+    #   state: started
 
-    - name: run docker
-      shell: docker run -it spoider/pyth
+    # - name: run docker
+    #   shell: docker run -it spoider/pyth
 
     # - name: start docker service
     #   service: docker
