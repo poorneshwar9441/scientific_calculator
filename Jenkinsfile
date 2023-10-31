@@ -36,7 +36,7 @@ stage('Build Docker Image') {
 stage('Push Image to dockerHub') {
     steps {
       script{
-          sh '/usr/local/bin/docker login -u "gamergrange9@gmail.com" -p "docker_user"'
+          sh '/usr/local/bin/docker login -u "gamer_grange9@gmail.com" -p "docker_user"'
           sh '/usr/local/bin/docker push ' +registry +':v1.0'
 } }
 }
@@ -48,14 +48,7 @@ stage('Free local space') {
 }
 stage('Deploy'){
     steps{
-       ansiblePlaybook becomeUser: null,
-       colorized: true,
-       credentialsId: 'localhost',
-       disableHostKeyChecking: true,
-       installation: 'Ansible',
-       inventory: 'inventory.yml',
-       playbook: 'playbook.yml',
-       sudoUser: null
+    sh '/Users/poorneshwarreddychaganti/Library/Python/3.11/bin/ansible-playbook -i inventory.yml playbook.yml -e image_name=spoider/pyth'
      }
 }
 
