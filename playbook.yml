@@ -8,9 +8,10 @@
       community.docker.docker_image:
         name: spoider/pyth:v1.0
         source: pull
-    - name: start docker service
-      service: docker
-      state: started
+        
+    # - name: start docker service
+    #   service: docker
+    #   state: started
 
-    - name: Run Docker container
-      shell: docker run -it spoider/pyth
+    # - name: Run Docker container
+    #   shell: docker run -it spoider/pyth
