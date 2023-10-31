@@ -11,7 +11,9 @@
         state: started
         
     - name: pull docker image
-      shell: docker pull docker.io/spoider/pyth:v1.0
+      docker_image:
+        name: spoider/pyth:v1.0
+
       
     - name: running container
       shell: docker run -it spoider/pyth:v1.0
