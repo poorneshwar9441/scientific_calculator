@@ -10,8 +10,10 @@
         name: spoider/pyth:v1.0
         source: pull
 
+    - name: start docker service
+      service:
+        name: docker
+        state: started
+
     - name: Run Docker Container
-      shell: /usr/local/bin/docker run -it spoider/pyth:v1.0
-      environment:
-        - ANSIBLE_FORCE_COLOR=1
-      tty: yes
+      shell: docker run -it spoider/pyth:v1.0
