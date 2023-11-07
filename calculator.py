@@ -16,7 +16,7 @@ def divide(x, y):
 
 def square_root(x):
     if x < 0:
-        return "Error: Square root of a negative number"
+        return "Error: Square root of a negative  number"
     return math.sqrt(x)
 
 def sin(x):

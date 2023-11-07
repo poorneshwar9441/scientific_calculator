@@ -38,3 +38,11 @@
 2023-10-30 20:06:55,697 - root - INFO - test_square_root: Passed
 2023-10-30 20:06:55,698 - root - INFO - test_subtraction: Passed
 2023-10-30 20:06:55,699 - root - INFO - test_tan: Passed
+2023-11-07 19:07:15,147 - root - INFO - test_addition: Passed
+2023-11-07 19:07:15,150 - root - INFO - test_cos: Passed
+2023-11-07 19:07:15,150 - root - INFO - test_division: Passed
+2023-11-07 19:07:15,151 - root - INFO - test_multiplication: Passed
+2023-11-07 19:07:15,152 - root - INFO - test_sin: Passed
+2023-11-07 19:07:15,152 - root - INFO - test_square_root: Passed
+2023-11-07 19:07:15,153 - root - INFO - test_subtraction: Passed
+2023-11-07 19:07:15,154 - root - INFO - test_tan: Passed
